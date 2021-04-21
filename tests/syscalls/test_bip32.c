@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include <cmocka.h>
 
@@ -714,6 +715,19 @@ static void test_bolos_vector(const struct bolos_vector *v)
                    sizeof(expected_key));
   assert_int_equal(hexstr2bin(v->chain, expected_chain, sizeof(expected_chain)),
                    sizeof(expected_chain));
+
+  unsigned int i;
+  fprintf(stderr, "expected_key: ");
+  for (i = 0; i < 64; i++) {
+    fprintf(stderr, "%02x", expected_key[i]);
+  }
+  fprintf(stderr, "\n");
+  fprintf(stderr, "actual_key: ");
+  for (i = 0; i < 64; i++) {
+    fprintf(stderr, "%02x", key[i]);
+  }
+  fprintf(stderr, "\n");
+
   assert_memory_equal(key, expected_key, sizeof(expected_key));
   assert_memory_equal(chain, expected_chain, sizeof(chain));
 }
