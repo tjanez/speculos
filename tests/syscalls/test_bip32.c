@@ -302,6 +302,18 @@ static const struct bolos_vector bolos_vectors[] = {
     .chain = "40418c80e21c94bddfcab2318f9a82fb65739c687e09fee15c172778b04cc1af",
     .key = "207c589bf02f2cbfadaf8024e1dd27a5b77f01571ddb40c4ee78d7d329e69d41a6045bdebc8c836298881804ff424ee187c4141f49f8fda253f8ac3df2cda6bf"
   },
+  /* Oasis' BIP32 derivation path for account 0.
+   *
+   * NOTE: Derivation is reproducible with orakolo's implementation.
+  */
+  {
+    .mode = 0,
+    .curve = 2,
+    .path = "44'/474'/0'/0'/0'",
+    .seed_key = "",
+    .chain = "79c408a8ba0b5836b8d4ad8788619cfaa22043e868e38b33e58edc3463215624",
+    .key = "b80f036d8f4a3cc49b72fc51051ea1ba6d0d676ac81b4548048aa7f327e69d411fbbab2383b1b920836a8f70720d2e3dff45ea3362f1a1e6b22f34e5e7a90d4a"
+  },
   {
     .mode = 0,
     .curve = 2,
